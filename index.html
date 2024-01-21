@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{message}}</h1>
+      <!-- Testing new v-bind way (waiting for merge: https://github.com/vuejs/core/pull/9451) -->
+      <img :src :id :alt />
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      // Options API
+      Vue.createApp({
+        data() {
+          return {
+            message: "Hello World",
+            src: "https://picsum.photos/200/300",
+            id: "my-image",
+            alt: "A random image",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
